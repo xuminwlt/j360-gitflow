@@ -37,3 +37,23 @@ j360-gitflow
 
 
 ##特殊说明##
+ - release版本测试出bug
+  - git checkout release-0.0.1
+ - master版本上线后出现bug，hotfix或者issue
+  - git checkout -b issue-#001 master
+  -  Fix the bug
+
+  - git checkout master
+  - git merge issue-#001
+  - git push
+
+ - 就像发布分支，维护分支中新加这些重要修改需要包含到develop分支中，所以小红要执行一个合并操作。然后就可以安全地删除这个分支了：
+  - git checkout develop
+  - git merge issue-#001
+  - git push
+  - git branch -d issue-#001
+
+##和maven及配置文件的匹配##
+ - 开发新功能在dev分支pom中标注 0.0.2-snapshou
+ - fork dev到release-0.0.2分支后，标注pom为0.0.2-build-snapshot
+ - 切到master merge release-0.0.2，标注tag 0.0.2并在pom中标记未0.0.2-release，提交push
