@@ -63,3 +63,10 @@ j360-gitflow
   - dev分支使用dev.properties
   - release分支使用test.properties
   - master分支使用production.properties
+
+##使用maven-release-plugin发布版本号##
+- 更新pom版本号
+ - mvn --batch-mode release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=1.3.0-SNAPSHOT
+
+- 更新pom版本号发布并提交
+ - mvn release:clean release:prepare -Dtag=1.3.0 -DdevelopmentVersion=3.8-SNAPSHOT -DreleaseVersion=3.9
