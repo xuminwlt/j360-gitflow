@@ -5,13 +5,13 @@
     <groupId>me.j360.gitflow</groupId>
     <artifactId>gitflow-version</artifactId>
     <packaging>pom</packaging>
-    <version>1.5.0-RELEASE</version>
+    <version>1.5.0-SNAPSHOT</version>
 
     <scm>
         <connection>scm:git:https://github.com/xuminwlt/j360-gitflow.git</connection>
         <url>https://github.com/xuminwlt/j360-gitflow</url>
         <developerConnection>scm:git:https://github.com/xuminwlt/j360-gitflow.git</developerConnection>
-      <tag>1.5.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <build>
