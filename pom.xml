@@ -4,7 +4,8 @@
 
     <groupId>me.j360.gitflow</groupId>
     <artifactId>gitflow-version</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <version>1.3.0-SNAPSHOT</version>
 
     <scm>
         <connection>scm:git:https://github.com/xuminwlt/j360-gitflow.git</connection>
@@ -41,5 +42,9 @@
             </plugin>
         </plugins>
     </build>
+    <modules>
+        <module>j360-module-version-autoupdate</module>
+        <module>j360-module-version-autoupdate-dependment</module>
+    </modules>
 
 </project>
