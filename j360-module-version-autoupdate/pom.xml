@@ -3,7 +3,7 @@
     <parent>
         <artifactId>gitflow-version</artifactId>
         <groupId>me.j360.gitflow</groupId>
-        <version>1.5.0-SNAPSHOT</version>
+        <version>1.6.0-RELEASE</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
