@@ -3,7 +3,7 @@
     <parent>
         <artifactId>gitflow-version</artifactId>
         <groupId>me.j360.gitflow</groupId>
-        <version>1.3.0-SNAPSHOT</version>
+        <version>1.4.0-BUILD-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,7 +14,7 @@
         <dependency>
             <groupId>me.j360.gitflow</groupId>
             <artifactId>j360-module-version-autoupdate</artifactId>
-            <version>1.3.0-SNAPSHOT</version>
+            <version>1.4.0-BUILD-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
