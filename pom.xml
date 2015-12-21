@@ -8,5 +8,39 @@
     <artifactId>gitflow-version</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <scm>
+        <connection>scm:git:https://github.com/xuminwlt/j360-gitflow.git</connection>
+        <url>https://github.com/xuminwlt/j360-gitflow</url>
+        <developerConnection>scm:git:https://github.com/xuminwlt/j360-gitflow.git</developerConnection>
+    </scm>
+
+    <build>
+        <!--开启资源过滤-->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <!--编译插件，主要用来解决GBK字符集编码问题-->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>utf-8</encoding>
+                </configuration>
+            </plugin>
+            <!--打包发布版本插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
