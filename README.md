@@ -68,5 +68,184 @@ j360-gitflow
 - 更新pom版本号
  - mvn --batch-mode release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=1.3.0-SNAPSHOT
 
-- 更新pom版本号发布并提交
- - mvn release:clean release:prepare -Dtag=1.3.0 -DdevelopmentVersion=3.8-SNAPSHOT -DreleaseVersion=3.9
+- 更新pom版本号、标记tag、发布提交+更新本次版本号并提交
+ - mvn release:clean release:prepare -Dtag=1.6.0 -DdevelopmentVersion=1.7.0-SNAPSHOT -DreleaseVersion=1.6.0-RELEASE
+
+- 解释：
+```
+min-xufpdeMacBook-Pro:j360-gitflow min_xu$ mvn release:clean release:prepare -Dtag=1.5.0 -DdevelopmentVersion=1.5.0-SNAPSHOT -DreleaseVersion=1.5.0-RELEASE
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO]
+[INFO] gitflow-version
+[INFO] j360-module-version-autoupdate
+[INFO] j360-module-version-autoupdate-dependment
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building gitflow-version 1.4.6-BUILD-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-release-plugin:2.5.3:clean (default-cli) @ gitflow-version ---
+[INFO] Cleaning up after release...
+[INFO]
+[INFO] --- maven-release-plugin:2.5.3:prepare (default-cli) @ gitflow-version ---
+[INFO] Verifying that there are no local modifications...
+[INFO]   ignoring changes on: **/pom.xml.backup, **/release.properties, **/pom.xml.branch, **/pom.xml.next, **/pom.xml.releaseBackup, **/pom.xml.tag
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git rev-parse --show-toplevel
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git status --porcelain .
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[WARNING] Ignoring unrecognized line: ?? release.properties
+[WARNING] Ignoring unrecognized line: ?? target/
+[INFO] Checking dependencies and plugins for snapshots ...
+[INFO] Transforming 'gitflow-version'...
+[INFO] Transforming 'j360-module-version-autoupdate'...
+[INFO] Transforming 'j360-module-version-autoupdate-dependment'...
+[INFO]   Updating j360-module-version-autoupdate to 1.5.0-RELEASE
+[INFO] Not generating release POMs
+[INFO] Executing goals 'clean verify'...
+[WARNING] Maven will be executed in interactive mode, but no input stream has been configured for this MavenInvoker instance.
+[INFO] [INFO] Scanning for projects...
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Reactor Build Order:
+[INFO] [INFO]
+[INFO] [INFO] gitflow-version
+[INFO] [INFO] j360-module-version-autoupdate
+[INFO] [INFO] j360-module-version-autoupdate-dependment
+[INFO] [INFO]
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building gitflow-version 1.5.0-RELEASE
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO]
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gitflow-version ---
+[INFO] [INFO] Deleting /Users/min_xu/Documents/IdeaProjects/j360-gitflow/target
+[INFO] [INFO]
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building j360-module-version-autoupdate 1.5.0-RELEASE
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO]
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ j360-module-version-autoupdate ---
+[INFO] [INFO]
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ j360-module-version-autoupdate ---
+[INFO] [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] [INFO] Copying 0 resource
+[INFO] [INFO]
+[INFO] [INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ j360-module-version-autoupdate ---
+[INFO] [INFO] Nothing to compile - all classes are up to date
+[INFO] [INFO]
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ j360-module-version-autoupdate ---
+[INFO] [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] [INFO] skip non existing resourceDirectory /Users/min_xu/Documents/IdeaProjects/j360-gitflow/j360-module-version-autoupdate/src/test/resources
+[INFO] [INFO]
+[INFO] [INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ j360-module-version-autoupdate ---
+[INFO] [INFO] Nothing to compile - all classes are up to date
+[INFO] [INFO]
+[INFO] [INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ j360-module-version-autoupdate ---
+[INFO] [INFO] No tests to run.
+[INFO] [INFO]
+[INFO] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ j360-module-version-autoupdate ---
+[INFO] [INFO] Building jar: /Users/min_xu/Documents/IdeaProjects/j360-gitflow/j360-module-version-autoupdate/target/j360-module-version-autoupdate-1.5.0-RELEASE.jar
+[INFO] [INFO]
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building j360-module-version-autoupdate-dependment 1.5.0-RELEASE
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO]
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ j360-module-version-autoupdate-dependment ---
+[INFO] [INFO]
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ j360-module-version-autoupdate-dependment ---
+[INFO] [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] [INFO] Copying 0 resource
+[INFO] [INFO]
+[INFO] [INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ j360-module-version-autoupdate-dependment ---
+[INFO] [INFO] Nothing to compile - all classes are up to date
+[INFO] [INFO]
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ j360-module-version-autoupdate-dependment ---
+[INFO] [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] [INFO] skip non existing resourceDirectory /Users/min_xu/Documents/IdeaProjects/j360-gitflow/j360-module-version-autoupdate-dependment/src/test/resources
+[INFO] [INFO]
+[INFO] [INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ j360-module-version-autoupdate-dependment ---
+[INFO] [INFO] Nothing to compile - all classes are up to date
+[INFO] [INFO]
+[INFO] [INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ j360-module-version-autoupdate-dependment ---
+[INFO] [INFO] No tests to run.
+[INFO] [INFO]
+[INFO] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ j360-module-version-autoupdate-dependment ---
+[INFO] [INFO] Building jar: /Users/min_xu/Documents/IdeaProjects/j360-gitflow/j360-module-version-autoupdate-dependment/target/j360-module-version-autoupdate-dependment-1.5.0-RELEASE.jar
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Reactor Summary:
+[INFO] [INFO]
+[INFO] [INFO] gitflow-version .................................... SUCCESS [  0.198 s]
+[INFO] [INFO] j360-module-version-autoupdate ..................... SUCCESS [  1.125 s]
+[INFO] [INFO] j360-module-version-autoupdate-dependment .......... SUCCESS [  0.029 s]
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] BUILD SUCCESS
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Total time: 1.481 s
+[INFO] [INFO] Finished at: 2015-12-21T14:04:11+08:00
+[INFO] [INFO] Final Memory: 10M/222M
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] Checking in modified POMs...
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git add -- pom.xml j360-module-version-autoupdate/pom.xml j360-module-version-autoupdate-dependment/pom.xml
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git rev-parse --show-toplevel
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git status --porcelain .
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[WARNING] Ignoring unrecognized line: ?? j360-module-version-autoupdate-dependment/pom.xml.releaseBackup
+[WARNING] Ignoring unrecognized line: ?? j360-module-version-autoupdate-dependment/target/
+[WARNING] Ignoring unrecognized line: ?? j360-module-version-autoupdate/pom.xml.releaseBackup
+[WARNING] Ignoring unrecognized line: ?? j360-module-version-autoupdate/target/
+[WARNING] Ignoring unrecognized line: ?? pom.xml.releaseBackup
+[WARNING] Ignoring unrecognized line: ?? release.properties
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git commit --verbose -F /var/folders/57/zpw40ldx2kzdtwwm4kf9477c0000gn/T/maven-scm-45555875.commit pom.xml j360-module-version-autoupdate/pom.xml j360-module-version-autoupdate-dependment/pom.xml
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git symbolic-ref HEAD
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git push https://github.com/xuminwlt/j360-gitflow.git refs/heads/master:refs/heads/master
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Tagging release with the label 1.5.0...
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git tag -F /var/folders/57/zpw40ldx2kzdtwwm4kf9477c0000gn/T/maven-scm-1521173361.commit 1.5.0
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git push https://github.com/xuminwlt/j360-gitflow.git refs/tags/1.5.0
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git ls-files
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Transforming 'gitflow-version'...
+[INFO] Transforming 'j360-module-version-autoupdate'...
+[INFO] Transforming 'j360-module-version-autoupdate-dependment'...
+[INFO]   Updating j360-module-version-autoupdate to 1.5.0-SNAPSHOT
+[INFO] Not removing release POMs
+[INFO] Checking in modified POMs...
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git add -- pom.xml j360-module-version-autoupdate/pom.xml j360-module-version-autoupdate-dependment/pom.xml
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git rev-parse --show-toplevel
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git status --porcelain .
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[WARNING] Ignoring unrecognized line: ?? j360-module-version-autoupdate-dependment/pom.xml.releaseBackup
+[WARNING] Ignoring unrecognized line: ?? j360-module-version-autoupdate-dependment/target/
+[WARNING] Ignoring unrecognized line: ?? j360-module-version-autoupdate/pom.xml.releaseBackup
+[WARNING] Ignoring unrecognized line: ?? j360-module-version-autoupdate/target/
+[WARNING] Ignoring unrecognized line: ?? pom.xml.releaseBackup
+[WARNING] Ignoring unrecognized line: ?? release.properties
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git commit --verbose -F /var/folders/57/zpw40ldx2kzdtwwm4kf9477c0000gn/T/maven-scm-1398842325.commit pom.xml j360-module-version-autoupdate/pom.xml j360-module-version-autoupdate-dependment/pom.xml
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git symbolic-ref HEAD
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Executing: /bin/sh -c cd /Users/min_xu/Documents/IdeaProjects/j360-gitflow && git push https://github.com/xuminwlt/j360-gitflow.git refs/heads/master:refs/heads/master
+[INFO] Working directory: /Users/min_xu/Documents/IdeaProjects/j360-gitflow
+[INFO] Release preparation complete.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO]
+[INFO] gitflow-version .................................... SUCCESS [ 23.842 s]
+[INFO] j360-module-version-autoupdate ..................... SKIPPED
+[INFO] j360-module-version-autoupdate-dependment .......... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+
+```
