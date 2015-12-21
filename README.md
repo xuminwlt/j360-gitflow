@@ -71,7 +71,9 @@ j360-gitflow
 - 更新pom版本号、标记tag、提交+更新本次版本号并提交
  - mvn release:clean release:prepare -Dtag=1.6.0 -DdevelopmentVersion=1.7.0-SNAPSHOT -DreleaseVersion=1.6.0-RELEASE
 
-- 解释：
+- 解释-上述的执行后的两个commit操作：
+ - prepare 1.6.0
+ - prepare next release 1.7.0
 ```
 min-xufpdeMacBook-Pro:j360-gitflow min_xu$ mvn release:clean release:prepare -Dtag=1.5.0 -DdevelopmentVersion=1.5.0-SNAPSHOT -DreleaseVersion=1.5.0-RELEASE
 [INFO] Scanning for projects...
