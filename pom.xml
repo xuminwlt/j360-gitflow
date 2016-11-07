@@ -11,19 +11,20 @@
         <connection>scm:git:https://github.com/xuminwlt/j360-gitflow.git</connection>
         <url>https://github.com/xuminwlt/j360-gitflow</url>
         <developerConnection>scm:git:https://github.com/xuminwlt/j360-gitflow.git</developerConnection>
-   </scm>
+     <tag>1.7.2</tag>
+  </scm>
 
     <dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>me.j360.gitflow</groupId>
             <artifactId>j360-module-version-autoupdate</artifactId>
-            <version>${project.version}</version>
+            <version>1.7.2-RELEASE</version>
         </dependency>
         <dependency>
             <groupId>me.j360.gitflow</groupId>
             <artifactId>j360-module-version-autoupdate-dependment</artifactId>
-            <version>${project.version}</version>
+            <version>1.7.2-RELEASE</version>
         </dependency>
     </dependencies>
     </dependencyManagement>
@@ -61,6 +62,8 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <!-- to match this version -->
                     <tagNameFormat>@{project.version}</tagNameFormat>
+                    <developmentVersion>${project.version}</developmentVersion>
+                    <releaseVersion>${project.version}</releaseVersion>
                 </configuration>
             </plugin>
         </plugins>

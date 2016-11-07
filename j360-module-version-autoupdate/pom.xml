@@ -3,11 +3,16 @@
     <parent>
         <artifactId>gitflow-version</artifactId>
         <groupId>me.j360.gitflow</groupId>
-        <version>1.7.2-RELEASE</version>
+        <version>1.7.3-RELEASE</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>j360-module-version-autoupdate</artifactId>
+  <version>1.7.2-RELEASE</version>
 
 
+
+  <scm>
+    <tag>1.7.2</tag>
+  </scm>
 </project>
