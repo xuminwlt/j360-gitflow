@@ -3,12 +3,12 @@
     <parent>
         <artifactId>gitflow-version</artifactId>
         <groupId>me.j360.gitflow</groupId>
-        <version>1.7.5-RELEASE</version>
+        <version>1.7.6-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>j360-module-version-autoupdate-dependment</artifactId>
-  <version>1.7.5-RELEASE</version>
+  <version>1.7.5</version>
 
 
     <dependencies>
@@ -17,10 +17,4 @@
             <artifactId>j360-module-version-autoupdate</artifactId>
         </dependency>
     </dependencies>
-
-
-
-  <scm>
-    <tag>1.7.5</tag>
-  </scm>
 </project>

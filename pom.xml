@@ -5,7 +5,7 @@
     <groupId>me.j360.gitflow</groupId>
     <artifactId>gitflow-version</artifactId>
     <packaging>pom</packaging>
-    <version>1.7.5-RELEASE</version>
+    <version>1.7.6-SNAPSHOT</version>
 
     <scm>
         <connection>scm:git:https://github.com/xuminwlt/j360-gitflow.git</connection>
@@ -19,12 +19,12 @@
         <dependency>
             <groupId>me.j360.gitflow</groupId>
             <artifactId>j360-module-version-autoupdate</artifactId>
-            <version>${project.version}</version>
+            <version>1.7.5</version>
         </dependency>
         <dependency>
             <groupId>me.j360.gitflow</groupId>
             <artifactId>j360-module-version-autoupdate-dependment</artifactId>
-            <version>${project.version}</version>
+            <version>1.7.5</version>
         </dependency>
     </dependencies>
     </dependencyManagement>
