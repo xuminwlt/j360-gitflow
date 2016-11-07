@@ -68,8 +68,9 @@ j360-gitflow
 - 更新pom版本号
  - mvn --batch-mode release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=1.3.0-SNAPSHOT
 
+
 - 更新pom版本号、标记tag、提交+更新本次版本号并提交
- - mvn release:clean release:prepare -Dtag=1.6.0 -DdevelopmentVersion=1.7.0-SNAPSHOT -DreleaseVersion=1.6.0-RELEASE
+ - mvn release:clean release:prepare -Dtag=1.6.0 -DreleaseVersion=1.6.0-RELEASE -DdevelopmentVersion=1.7.0-SNAPSHOT 
 
 - 解释-上述的执行后的两个commit操作：
  - prepare 1.6.0
