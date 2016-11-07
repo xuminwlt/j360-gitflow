@@ -5,7 +5,7 @@
     <groupId>me.j360.gitflow</groupId>
     <artifactId>gitflow-version</artifactId>
     <packaging>pom</packaging>
-    <version>1.7.5</version>
+    <version>1.7.5-SNAPSHOT</version>
 
     <scm>
         <connection>scm:git:https://github.com/xuminwlt/j360-gitflow.git</connection>
@@ -61,9 +61,9 @@
                     <releaseProfiles>release</releaseProfiles>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <!-- to match this version -->
-                    <tagNameFormat>@{project.version}</tagNameFormat>
-                    <developmentVersion>1.7.6-SNAPSHOT</developmentVersion>
-                    <releaseVersion>${project.version}-RELEASE</releaseVersion>
+                    <!--<tagNameFormat>@{project.version}</tagNameFormat>-->
+                    <!--<developmentVersion>1.7.6-SNAPSHOT</developmentVersion>
+                    <releaseVersion>${project.version}-RELEASE</releaseVersion>-->
 
                 </configuration>
             </plugin>
