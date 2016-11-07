@@ -8,13 +8,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>j360-module-version-autoupdate-dependment</artifactId>
-  <version>1.7.5</version>
+
 
 
     <dependencies>
         <dependency>
             <groupId>me.j360.gitflow</groupId>
             <artifactId>j360-module-version-autoupdate</artifactId>
+            <version>1.7.6-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
