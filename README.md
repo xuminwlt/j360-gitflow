@@ -75,6 +75,58 @@ j360-gitflow
 - 解释-上述的执行后的两个commit操作：
  - prepare 1.6.0
  - prepare next release 1.7.0
+ 
+ 
+## 打包注意事项 new
+
+
+### 一 发布相关
+
+务必当前pom的版本号为SNAPSHOT版本,执行完下面命令会提交2次操作,操作出现问题 resume=false将会回滚,如果不回滚,使用release:rollback
+
+1. 修改所有的pomSNAPSHOT为指定的RELEASE版本,打上TAG提交
+2. 修改所有的pomRELEASE为指定的SNAPSHOT版本,提交,当前版本为最新的SNAPSHOT版本号
+
+在执行release:prepare操作 -Dmaven.test.skip=true无效,必须使用-Darguments="-DskipTests"参数
+
+执行prepare命令:
+
+1. 使用插件,将会执行如下的配置
+2. 使用注释的命令会有相同的效果
+ 
+ 
+执行无误:
+
+1. 使用mvn release:clean 清空回滚需要的backup文件
+2. 如有问题,执行release:rollback回滚
+
+### 二 未解决问题
+
+如果当前pom中的版本号是非RELASE版本或者内部的版本号不一致,还未找到统一的方式修改,只能全部手动修改成统一的SNAPSHOT才行。
+
+
+ ```
+ <!--打包发布版本插件
+              mvn release:clean release:prepare -Darguments="-DskipTests" -Dtag=0.1.0 -DreleaseVersion=0.1.0-RELEASE -DdevelopmentVersion=0.1.1-SNAPSHOT -Dresume=false -Ptest
+             -->
+             <plugin>
+                 <artifactId>maven-release-plugin</artifactId>
+                 <version>2.5.3</version>
+                 <configuration>
+                     <useReleaseProfile>false</useReleaseProfile>
+                     <goals>deploy</goals>
+                     <releaseProfiles>release</releaseProfiles>
+                     <autoVersionSubmodules>true</autoVersionSubmodules>
+ 
+                     <tagNameFormat>0.1.2</tagNameFormat>
+                     <releaseVersion>0.1.2-RELEASE</releaseVersion>
+                     <developmentVersion>0.1.3-SNAPSHOT</developmentVersion>
+                 </configuration>
+             </plugin>
+ ```
+ 
+ 
+ 
 ```
 min-xufpdeMacBook-Pro:j360-gitflow min_xu$ mvn release:clean release:prepare -Dtag=1.5.0 -DdevelopmentVersion=1.5.0-SNAPSHOT -DreleaseVersion=1.5.0-RELEASE
 [INFO] Scanning for projects...
